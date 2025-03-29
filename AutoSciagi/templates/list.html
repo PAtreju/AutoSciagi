@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lekcyjne Ściągi</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Lekcyjne Ściągi</h1>
+    <h2>Dostępne Ściągi:</h2>
+    <ul>
+    {% for brief in briefs %}
+        <li>
+            <a href="{{ brief.filename }}">{{ brief.title }}</a>
+            <span class="date">({{ brief.date }})</span>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
