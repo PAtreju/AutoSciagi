@@ -5,22 +5,32 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Lekcyjne Ściągi</h1>
+    <header class="header">
+        <span>Lekcyjne Ściągi</span>
+    </header>
+    <div class="main_container">
 
-    <form action="/create-brief" method="post">
-        <input type="text" name="theme" placeholder="Enter lesson theme" required>
-        <input type="text" name="desc" placeholder="Enter description theme">
-        <button type="submit">Generate Brief</button>
-    </form>
+        <form action="/create-brief" method="post" class="main_subcontainer">
+            <span>Enter lesson theme:</span>
+            <input type="text" name="theme" required>
+            <span>Enter description theme:</span>
+            <textarea name="desc" class="desc"></textarea>
+            <button type="submit">Generate Brief</button>
+        </form>
 
-    <h2>Dostępne Ściągi:</h2>
-    <ul>
-    {% for brief in briefs %}
-        <li>
-            <a href="{{ brief.filename }}">{{ brief.title }}</a>
-            <span class="date">({{ brief.date }})</span>
-        </li>
-    {% endfor %}
-    </ul>
+        <div class="main_subcontainer">
+            <h2>Dostępne Ściągi:</h2>
+            <a href="../static/style_sciaga.css" class="download">Pobierz CSS</a>
+            <ul>
+            {% for brief in briefs %}
+                <li>
+                    <a href="{{ brief.pathname }}">{{ brief.title }}</a>
+                    <span class="date">({{ brief.date }})</span>
+                    <a href="{{ brief.pathname }}" download="{{title}}" class="download">Pobierz</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
 </body>
 </html>

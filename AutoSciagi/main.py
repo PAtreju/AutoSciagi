@@ -33,14 +33,28 @@ for file in files:
             title = content[title_start:title_end]
             briefs.append({
                 "title": title,
-                "filename": f"/static/briefs/{file}",
-                "date": datetime.datetime.fromtimestamp(file_path.stat().st_mtime).strftime("%Y-%m-%d %H:%M")
+                "pathname": f"/sciagi/{file}",
+                "date": datetime.datetime.fromtimestamp(file_path.stat().st_mtime).strftime("%Y-%m-%d %H:%M"),
+                "filename": f"/static/briefs/{file}"
             })
             briefs.sort(key=lambda x: datetime.datetime.strptime(x["date"], "%Y-%m-%d %H:%M"), reverse=True)
 
 @app.get("/", response_class=HTMLResponse)
+async def get_index(request: Request):
+    return templates.TemplateResponse("main.html", {"request": request})
+
+@app.get("/sciagi", response_class=HTMLResponse)
 async def get_main(request: Request):
     return templates.TemplateResponse("list.html", {"request": request, "briefs": briefs})
+
+@app.get("/sciagi/{filename}", response_class=HTMLResponse)
+async def get_brief(request: Request, filename: str):
+    file_path = briefs_dir / filename
+    if not file_path.exists():
+        raise HTTPException(status_code=404, detail="File not found")
+    with open(file_path, "r") as f:
+        content = f.read()
+    return HTMLResponse(content=content)
 
 @app.get("/panel", response_class=HTMLResponse)
 async def get_index(request: Request):
@@ -75,7 +89,7 @@ async def create_brief(request: Request, theme: str = Form(...), desc: str = For
             <div class="content">
                 {brief_content}
             </div>
-            <p><a href="/">Back to index</a></p>
+            <p class="go_back"><a href="/sciagi">Back to index</a></p>
         </body>
         </html>
         """
