@@ -133,3 +133,10 @@ button[type='submit']:hover {
 .go_back:hover {
     background-color: #007BFF;
 }
+@media (max-width: 900px) {
+    .main_container {
+        flex-direction: column;
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+}
