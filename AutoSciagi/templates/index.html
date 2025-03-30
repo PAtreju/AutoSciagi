@@ -24,9 +24,9 @@
             <ul>
             {% for brief in briefs %}
                 <li>
-                    <a href="{{ brief.pathname }}">{{ brief.title }}</a>
+                    <a href="{{brief.pathname}}">{{ brief.title }}</a>
                     <span class="date">({{ brief.date }})</span>
-                    <a href="{{ brief.pathname }}" download="{{title}}" class="download">Pobierz</a>
+                    <a href="{{brief.pathname}}" download="{{brief.title}}" class="download">Pobierz</a>
                 </li>
             {% endfor %}
             </ul>
