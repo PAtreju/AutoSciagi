@@ -1,5 +1,5 @@
-# AutoSciagi# AutoSciagi
-*Generate concise, AI-powered cheat sheets (ściągi) for any academic topic.*
+# AutoSciagi
+*Generate concise, AI-powered cheat sheets for any academic topic.*
 
 ---
 
@@ -37,7 +37,7 @@ The application includes three primary views:
 ## Installation
 1. **Clone the repository**  
    ``bash
-   git clone https://github.com/yourusername/AutoSciagi.git
+   git clone https://github.com/PAtreju/AutoSciagi
    cd AutoSciagi
    ``
 
