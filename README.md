@@ -29,9 +29,6 @@ The application includes three primary views:
 1. **Landing Page** — animated “SHROOM DEV” logo  
 2. **List View** — browse existing cheat sheets  
 3. **Control Panel** — generate new cheat sheets  
-
-*(Screenshots omitted in README — add images here if desired.)*
-
 ---
 
 ## Installation
