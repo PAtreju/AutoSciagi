@@ -45,7 +45,7 @@ The application includes three primary views:
    ```bash
    python -m venv env
    source env/bin/activate      # On Windows: env\Scripts\activate
-   ``
+   ```
 
 3. **Install dependencies**  
    ```bash
@@ -81,7 +81,7 @@ The application includes three primary views:
 ---
 
 ## Project Structure
-`` 
+``` 
 main.py              # FastAPI app with routes
 templates/
 ├─ main.html         # Landing page
@@ -92,7 +92,7 @@ static/
 ├─ style_main.css    # Landing styles
 ├─ style_sciaga.css  # List & panel styles
 └─ images/           # SVG logo & favicons
-`` 
+``` 
 
 ---
 
