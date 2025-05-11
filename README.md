@@ -36,36 +36,36 @@ The application includes three primary views:
 
 ## Installation
 1. **Clone the repository**  
-   ``bash
+   ```bash
    git clone https://github.com/PAtreju/AutoSciagi
    cd AutoSciagi
-   ``
+   ```
 
 2. **Create & activate a virtual environment**  
-   ``bash
+   ```bash
    python -m venv env
    source env/bin/activate      # On Windows: env\Scripts\activate
    ``
 
 3. **Install dependencies**  
-   ``bash
+   ```bash
    pip install -r requirements.txt
-   ``
+   ```
 
 4. **Add your OpenAI API key**  
    - Create a `.env` file in the project root  
    - Paste:  
-     ``text
+     ```text
      OPENAI_API_KEY=your_openai_api_key_here
-     ``
+     ```
 
 ---
 
 ## Usage
 1. **Start the server**  
-   ``bash
+   ```bash
    uvicorn main:app --reload
-   ``
+   ```
 
 2. **Open your browser**  
    - `http://localhost:8000/` — Landing page  
