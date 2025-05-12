@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - ShroomDev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../static/images/favicon_io/site.webmanifest">
+    <style>
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        .login-form {
+            background-color: rgba(255,255,255, 0.25);
+            padding: 30px;
+            border-radius: 15px;
+            width: 300px;
+            max-width: 80%;
+        }
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .error-message {
+            color: #ff6b6b;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <span>Admin Panel Login</span>
+    </header>
+    <div class="login-container">
+        <form action="/login" method="post" class="login-form">
+            {% if error %}
+            <div class="error-message">{{ error }}</div>
+            {% endif %}
+            <h2>Login</h2>
+            <span>Username:</span>
+            <input type="text" name="username" required>
+            <span>Password:</span>
+            <input type="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

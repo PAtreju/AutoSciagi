@@ -8,10 +8,34 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="../static/images/favicon_io/site.webmanifest">
+    <style>
+        .user-status {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logout-btn {
+            background-color: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.8em;
+        }
+        .logout-btn:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <span>Lekcyjne Ściągi</span>
+        <div class="user-status">
+            <span>Logged in as: {{ user.username }}</span>
+            <a href="/logout" class="logout-btn">Logout</a>
+        </div>
     </header>
     <div class="main_container">
 
